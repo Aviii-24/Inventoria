@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!-- Hero / Banner Section -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel"  style="height: 45em;">
+  <!-- <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel"  data-bs-interval="3000"></div> -->
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="{% static 'pics/blackcycle.jpg' %}" class="d-block w-100" style="height:45em;object-fit: cover;" alt="Banner 1">
+      <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+        <h1 class="text-white">Welcome to Products Dashboard</h1>
+        <p class="text-white">Find your favorite products here</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'pics/laptopbanner.jpg' %}" class="d-block w-100" style="height:45em; object-fit:cover;" alt="Banner 2">
+      <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+        <h1 class="text-white">Welcome to Products Dashboard</h1>
+        <p class="text-white">Find your favorite products here</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'pics/darkdummybody.jpg' %}" class="d-block w-100" style="height:45em; object-fit:cover;" alt="Banner 3">
+      <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+        <h1 class="text-white">Welcome to Products Dashboard</h1>
+        <p class="text-white">Find your favorite products here</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'pics/sofaset.jpg' %}" class="d-block w-100" style="height:45em; object-fit:cover;" alt="Banner 4">
+      <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+        <h1 class="text-white">Welcome to Products Dashboard</h1>
+        <p class="text-white">Find your favorite products here</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Carousel controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+  <!-- Scroll down -->
+  <div style="position:absolute; bottom:20px; left:50%; transform:translateX(-50%); z-index:20;">
+    <a href="#second-sec" style="text-decoration:none; color:white;">
+      <p class="lead" style="margin:0;">Scroll Down</p>
+    </a>
+  </div>
+</div>
+
+<div id="second-sec" class="container  text-center" style="height:35em; margin-top: 5%;">
+  <h1 class="mb-3">Welcome to Product Dashboard</h1>
+  <p class="lead">Your one-stop solution to manage, explore, and shop products with ease.</p>
+  <hr>
+<br>
+  <!-- Search Bar -->
+  <form method="get" action="{% url 'search' %}" class="d-flex justify-content-center mb-4">
+    <input class="form-control w-50" type="text" name="q" placeholder="Search for products...">
+    <button class="btn btn-primary ms-2" type="submit">Search</button>
+  </form>
+<br>
+  <!-- Features Section -->
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <h4>🛒 Shop Products</h4>
+        <p>Browse our wide range of products with detailed descriptions, prices, and images.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <h4>⚡ Manage Inventory</h4>
+        <p>Easily add, update, or remove products using our admin dashboard.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <h4>🔍 Smart Search</h4>
+        <p>Quickly find the products you need using our powerful search feature.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="mt-5">
+    <a href="{% url 'show' %}" class="btn btn-success btn-lg">Explore Products</a>
+  </div>
+</div>
+<br><br>
+
+{% endblock %}

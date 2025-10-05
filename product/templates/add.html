@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container mt-3 w-50">
+        <div class="card p-4">
+            <h2 class="text-center mb-4 text-primary">Add New Product</h2>
+            <form action="{% url 'add'%}" enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="productid">Product ID</label>
+                    <input type="text" class="form-control" id="productid" placeholder="Enter Product Id" name="pid">
+                </div>
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" class="form-control" id="productname" placeholder="Enter Product Name" name="pname">
+                </div>
+                <div class="form-group">
+                    <label for="price">Prices (&#8377;)</label>
+                    <input type="text" class="form-control" id="price" placeholder="Enter Price" name="price">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label><br>
+                    <textarea class="form-control" rows="3" placeholder="Enter Product Description" name="description" id="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Product Image</label>
+                    <input type="file" class="form-control" id="productImage"  name="pimage">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select class="form-control" name="category" id="category">
+                        <option value="">Select Category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Cars and Motorbikes ">Cars and Motorbikes</option>
+                        <option value="Home and Kitchen"> Home and Kitchen</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <br>
+                <button  type="submit" class="btn btn-success btn-block">Add New Product</button>
+
+
+
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
