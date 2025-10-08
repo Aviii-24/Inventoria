@@ -100,7 +100,7 @@ def logoutu(request):
     logout(request)
     return redirect("loginu")
 
-
+@login_required
 def electronics(request):
     obj = ProductList.objects.filter(category = "Electronics")
     context ={
@@ -110,3 +110,35 @@ def electronics(request):
         return render(request,"electronics.html",context)
     else:
         return render(request,"home.html",{"error" : "Currently the Products of that Category are Out of Stock...."})
+    
+@login_required
+def carandmotorbikes(request):
+    obj = ProductList.objects.filter(category="Cars and Motorbikes")
+    context ={
+        "obj":obj
+    }
+    if obj.exists():
+        return render(request,"carandmotorbikes.html",context)
+    else:
+        return render(request,"home.html",{"error":"Currently the Products of that Category are Out of Stock"})
+    
+@login_required
+def homeandkitchen(request):
+    obj = ProductList.objects.filter(category="Home and Kitchen")
+    context ={
+        "obj":obj
+    }
+    if obj.exists():
+        return render(request,"homeandkitchen.html",context)
+    else:
+        return render(request,"home.html",{"error":"Currently the Products of that Category are Out of Stock"})
+    
+def fashion(request):
+    obj = ProductList.objects.filter(category="Fashion")
+    context ={
+        "obj":obj
+    }
+    if obj.exists():
+        return render(request,"fashion.html",context)
+    else:
+        return render(request,"home.html",{"error":"Currently the Products of that Category are Out of Stock"})

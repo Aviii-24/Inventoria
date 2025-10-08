@@ -11,5 +11,7 @@ urlpatterns =[
     path('logoutu/',views.logoutu,name="logoutu"),
     path('search/',views.search_products,name="search"),
     path('electronics/',views.electronics,name="electronics"),
-
+    path('carandmotorbikes/',views.carandmotorbikes,name="carandmotorbikes"),
+    path('fashion/',views.fashion,name="fashion"),
+    path('homeandkitchen/',views.homeandkitchen,name="homeandkitchen"),
 ]
