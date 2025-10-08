@@ -24,7 +24,7 @@ A full-stack **Django web application** with user authentication, CRUD operation
 ---
 
 ## 📂 Project Structure
-
+```bash
 DJANGO MODULE/
 ├── ProductDashboard/
 │ ├── pycache/
@@ -49,6 +49,8 @@ DJANGO MODULE/
 │ └── views.py
 ├── manage.py
 └── README.md
+```
+
 
 
 ---
